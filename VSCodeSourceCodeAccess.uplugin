@@ -1,0 +1,32 @@
+{
+	"FileVersion" : 3,
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"FriendlyName" : "VSCode Plugin",
+	"Description" : "Provides source code access for working with C++ projects using VSCode",
+	"Category" : "Programming",
+	"CreatedBy" : "Christopher Reed",
+	"CreatedByURL" : "https://github.com/christopherreed/VSCodeSourceCodeAccess",
+	"DocsURL" : "",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : false,
+	"IsBetaVersion" : false,
+	"Installed" : false,
+	"Modules" :
+	[
+		{
+			"Name" : "VSCodeSourceCodeAccess",
+			"Type" : "Developer",
+			"LoadingPhase" : "PostEngineInit",
+			"WhitelistPlatforms" :
+			[
+				"Linux",
+				"Win64",
+				"Win32",
+				"Mac"
+			]
+		}
+	]
+}
