@@ -1,14 +1,11 @@
 
 VSCodeSourceCodeAccess
 ======================
+[https://github.com/christopherreed/VSCodeSourceCodeAccess](https://github.com/christopherreed/VSCodeSourceCodeAccess)
 
 Unreal Engine 4 plugin that provides source code access for working with C++ projects using [VSCode](https://code.visualstudio.com/). This plugin should work on Linux, Windows, and Mac (not tested).
 
 You may want to check out [ue4-cpptools](https://github.com/christopherreed/ue4-cpptools), a VSCode extension that provides tools for working with Unreal Engine 4 C++ projects in VSCode.
-
-[https://github.com/christopherreed/VSCodeSourceCodeAccess](https://github.com/christopherreed/VSCodeSourceCodeAccess)
-
-<a href='https://ko-fi.com/A41034HG' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 Install
 -------
@@ -38,3 +35,5 @@ Known Issues
 LICENSE
 -------
 This software is licensed under the MIT License, see LICENSE for more information
+
+<a href='https://ko-fi.com/A41034HG' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
