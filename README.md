@@ -12,6 +12,7 @@ Features
 
 This is a very basic plugin that really only provides the ability to open C++ classes and projects in VSCode from the UE4Editor. This plugin should work on Linux, Windows, and Mac (not tested).
 
+
 Install
 -------
 
