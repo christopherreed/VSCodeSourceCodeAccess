@@ -10,8 +10,15 @@ You may want to check out [ue4-cpptools](https://github.com/christopherreed/ue4-
 Features
 --------
 
-This is a very basic plugin that really only provides the ability to open C++ classes and projects in VSCode from the UE4Editor. This plugin should work on Linux, Windows, and Mac (not tested).
+This is a very basic plugin that really only provides the ability to open C++ classes and projects in VSCode from the UE4Editor.
 
+This plugin should work with Unreal Engine versions 4.16 and 4.17 on Linux, Windows, and Mac (not tested).
+
+Unreal Engine   | 4.17  | 4.16  | 4.15 (or older)
+----------------|-------|-------|----------------
+Windows         | ok    | ok    | no
+Linux           | ok    | ok    | no
+Mac             | ?     | ?     | no
 
 Install
 -------
@@ -20,7 +27,11 @@ Install
 
 2) Copy the plugin source folder into an existing Unreal Engine 4 C++ project's __Plugins__ folder (*.../MyProject/Plugins/VSCodeSourceCodeAccess*)
 
-3) Open the project and Unreal Engine 4 should prompt you to build the __VSCodeSourceCodeAccess__ plugin
+3) Open the project and Unreal Engine 4
+
+4) Select __No__ if prompted to disable the __VSCodeSourceCodeAccess__ plugin because it is incompatible with your engine version
+    
+5) Select __Yes__ when asked if you would like to build the __VSCodeSourceCodeAccess__ plugin
 
 > After building the plugin you can make it available to other projects by copying the __VSCodeSourceCodeAccess__ plugin folder to your Unreal Engine 4 __Engine/Plugins__ folder (*...Engine/Plugins/VSCodeSourceCodeAccess*)
 
