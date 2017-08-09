@@ -9,7 +9,7 @@
 	"CreatedByURL" : "https://github.com/christopherreed/VSCodeSourceCodeAccess",
 	"DocsURL" : "",
 	"MarketplaceURL" : "",
-	"SupportURL" : "",
+	"SupportURL" : "https://github.com/christopherreed/VSCodeSourceCodeAccess/issues",
 	"EnabledByDefault" : true,
 	"CanContainContent" : false,
 	"IsBetaVersion" : false,
@@ -19,7 +19,7 @@
 		{
 			"Name" : "VSCodeSourceCodeAccess",
 			"Type" : "Developer",
-			"LoadingPhase" : "PostEngineInit",
+			"LoadingPhase" : "Default",
 			"WhitelistPlatforms" :
 			[
 				"Linux",
