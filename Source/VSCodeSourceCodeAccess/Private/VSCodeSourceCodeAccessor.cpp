@@ -105,7 +105,7 @@ bool FVSCodeSourceCodeAccessor::OpenFileAtLine(const FString& FullPath, int32 Li
 	ColumnNumber = ColumnNumber > 0 ? ColumnNumber : 1;
 
 	// Add this to handle spaces in path names.
-	const FString FixedFilePath = FString::Printf(TEXT("\"%s:%d:%d\""), *FullPath, LineNumber, ColumnNumber);
+	const FString FixedFilePath = FString::Printf(TEXT("\"%s\" -g \"%s:%d:%d\""), *ProjectDir, *FullPath, LineNumber, ColumnNumber);
 
 	FProcHandle Proc = FPlatformProcess::CreateProc(*Settings->VSCodePath, *FixedFilePath, true, false, false, nullptr, 0, nullptr, nullptr);
 	if (!Proc.IsValid())
@@ -122,7 +122,7 @@ bool FVSCodeSourceCodeAccessor::OpenSourceFiles(const TArray<FString>& AbsoluteS
 	for (const FString& SourcePath : AbsoluteSourcePaths)
 	{
 		// Add this to handle spaces in path names.
-		const FString FixedFilePath = FString::Printf(TEXT("\"%s\""), *SourcePath);
+		const FString FixedFilePath = FString::Printf(TEXT("\"%s\" \"%s\""), *ProjectDir, *SourcePath);
 
 		FProcHandle Proc = FPlatformProcess::CreateProc(*Settings->VSCodePath, *FixedFilePath, true, false, false, nullptr, 0, nullptr, nullptr);
 		if (!Proc.IsValid())
