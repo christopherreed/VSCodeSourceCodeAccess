@@ -36,16 +36,11 @@ void FVSCodeSourceCodeAccessor::Startup()
 	Settings = GetMutableDefault<UVSCodeSettings> ();
 	Settings->CheckSettings();
 	
-	ProjectFile = *FPaths::ConvertRelativePathToFull(*FPaths::GetProjectFilePath());
+	FString ProjectFile = *FPaths::ConvertRelativePathToFull(*FPaths::GetProjectFilePath());
 	FPaths::NormalizeFilename(ProjectFile);
-
-	ProjectName = *FPaths::GetBaseFilename(ProjectFile);
 
 	ProjectDir = *FPaths::ConvertRelativePathToFull(*FPaths::GetPath(ProjectFile));
 	FPaths::NormalizeFilename(ProjectDir);
-
-	VSCodeWorkspaceDir = *FPaths::Combine(ProjectDir, TEXT(".vscode"));
-	FPaths::NormalizeDirectoryName(VSCodeWorkspaceDir);
 }
 
 void FVSCodeSourceCodeAccessor::Shutdown()
@@ -95,7 +90,6 @@ bool FVSCodeSourceCodeAccessor::OpenSolution()
 	}
 
 	return true;
-
 }
 
 bool FVSCodeSourceCodeAccessor::OpenFileAtLine(const FString& FullPath, int32 LineNumber, int32 ColumnNumber)

@@ -43,17 +43,8 @@ public:
 	void Startup();
 	void Shutdown();
 private:
-	// Project workspace .vscode directory
-	FString VSCodeWorkspaceDir;
-	// Project .uproject file
-	FString ProjectFile;
-	// Project name
-	FString ProjectName;
 	// Project directory
 	FString ProjectDir;
 	
 	class UVSCodeSettings *Settings = nullptr;
-
-	void GenerateCppToolsPropertiesFile();
-	
 };
