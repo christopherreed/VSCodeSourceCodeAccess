@@ -27,7 +27,7 @@ Install
 
 2) Copy the plugin source folder into an existing Unreal Engine 4 C++ project's __Plugins__ folder (*.../MyProject/Plugins/VSCodeSourceCodeAccess*)
 
-3) Open the project and Unreal Engine 4
+3) Open the project from Unreal Engine 4
 
 4) Select __No__ if prompted to disable the __VSCodeSourceCodeAccess__ plugin because it is incompatible with your engine version
     
