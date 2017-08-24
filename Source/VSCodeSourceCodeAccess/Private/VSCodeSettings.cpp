@@ -42,7 +42,16 @@ bool UVSCodeSettings::CheckSettings()
 	if (VSCodePath.IsEmpty() || !FPaths::FileExists(VSCodePath))
 	{
 #if PLATFORM_WINDOWS
-		VSCodePath = TEXT("C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe");
+		// Prefer 64-bit version of code if present
+		FString x64 = TEXT("C:\\Program Files\\Microsoft VS Code\\Code.exe");
+		if (FPaths::FileExists(x64))
+		{
+			VSCodePath = x64;
+		}
+		else
+		{
+			VSCodePath = TEXT("C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe");
+		}	
 #elif PLATFORM_MAC
 		VSCodePath = TEXT("/usr/bin/code"); // Untested
 #elif PLATFORM_LINUX
