@@ -41,6 +41,13 @@ void FVSCodeSourceCodeAccessor::Startup()
 
 	ProjectDir = *FPaths::ConvertRelativePathToFull(*FPaths::GetPath(ProjectFile));
 	FPaths::NormalizeFilename(ProjectDir);
+
+	// Sanity check
+	if (!FPaths::DirectoryExists(ProjectDir))
+	{
+		UE_LOG(LogVSCodeAccessor, Error, TEXT("Failed to access project directory '%s'"), *ProjectDir);
+	}
+
 }
 
 void FVSCodeSourceCodeAccessor::Shutdown()
@@ -71,12 +78,6 @@ FText FVSCodeSourceCodeAccessor::GetDescriptionText() const
 bool FVSCodeSourceCodeAccessor::OpenSolution()
 {
 	// A project in VSCode is simply a directory, optionally with a .vscode sub directory to configure extensions
-	if (!FPaths::DirectoryExists(ProjectDir))
-	{
-		UE_LOG(LogVSCodeAccessor, Error, TEXT("Could Not Open Solution - Project Directory Not Found"));
-		return false;
-	}
-
 	// Open Project Directory in VSCode
 	// Add this to handle spaces in path names.
 	const FString FixedProjectDir = FString::Printf(TEXT("\"%s\""), *ProjectDir);
