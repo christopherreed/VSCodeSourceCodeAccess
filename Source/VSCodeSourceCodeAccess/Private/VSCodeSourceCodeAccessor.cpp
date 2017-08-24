@@ -78,8 +78,8 @@ FText FVSCodeSourceCodeAccessor::GetDescriptionText() const
 bool FVSCodeSourceCodeAccessor::OpenSolution()
 {
 	// A project in VSCode is simply a directory, optionally with a .vscode sub directory to configure extensions
-	// Open Project Directory in VSCode
-	// Add this to handle spaces in path names.
+	// Open project directory in VSCode
+	// Add this to handle spaces in path names
 	const FString FixedProjectDir = FString::Printf(TEXT("\"%s\""), *ProjectDir);
 
 	FProcHandle Proc = FPlatformProcess::CreateProc(*Settings->VSCodePath, *FixedProjectDir, true, true, false, nullptr, 0, nullptr, nullptr);
@@ -95,11 +95,12 @@ bool FVSCodeSourceCodeAccessor::OpenSolution()
 
 bool FVSCodeSourceCodeAccessor::OpenFileAtLine(const FString& FullPath, int32 LineNumber, int32 ColumnNumber)
 {
-	// column & line numbers are 1-based, so dont allow zero
+	// Column & line numbers are 1-based, so dont allow zero
 	LineNumber = LineNumber > 0 ? LineNumber : 1;
 	ColumnNumber = ColumnNumber > 0 ? ColumnNumber : 1;
 
-	// Add this to handle spaces in path names.
+	// Open Project directory and file in VSCode
+	// Add this to handle spaces in path names
 	const FString FixedFilePath = FString::Printf(TEXT("\"%s\" -g \"%s:%d:%d\""), *ProjectDir, *FullPath, LineNumber, ColumnNumber);
 
 	FProcHandle Proc = FPlatformProcess::CreateProc(*Settings->VSCodePath, *FixedFilePath, true, false, false, nullptr, 0, nullptr, nullptr);
@@ -114,9 +115,11 @@ bool FVSCodeSourceCodeAccessor::OpenFileAtLine(const FString& FullPath, int32 Li
 
 bool FVSCodeSourceCodeAccessor::OpenSourceFiles(const TArray<FString>& AbsoluteSourcePaths)
 {
+	// Open project directory and files in VSCode
+	// VSCode will open them all in the same instance
 	for (const FString& SourcePath : AbsoluteSourcePaths)
 	{
-		// Add this to handle spaces in path names.
+		// Add this to handle spaces in path names
 		const FString FixedFilePath = FString::Printf(TEXT("\"%s\" \"%s\""), *ProjectDir, *SourcePath);
 
 		FProcHandle Proc = FPlatformProcess::CreateProc(*Settings->VSCodePath, *FixedFilePath, true, false, false, nullptr, 0, nullptr, nullptr);
