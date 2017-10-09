@@ -7,6 +7,20 @@ Unreal Engine 4 plugin that provides source code access for working with C++ pro
 
 You may want to check out [ue4-cpptools](https://github.com/christopherreed/ue4-cpptools), a VSCode extension that provides tools for working with Unreal Engine 4 C++ projects in VSCode.
 
+Warning
+-------
+ __USE AT YOUR OWN RISK__
+	
+This is an **unofficial** plugin and it is not affiliated in any way with Epic Games. This plugin shouldn't be used in a production environment.
+
+Unreal Engine 4.18
+------------------
+Unreal Engine 4.18 ships with official VSCode support.
+
+**Future development of this plugin will halt and become maintenance and bug fixes only.**
+
+The github repo will remain avaialble for use with pre 4.18 versions of Unreal Engine.
+
 Features
 --------
 
